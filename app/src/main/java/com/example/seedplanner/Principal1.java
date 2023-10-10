@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -28,8 +29,13 @@ public class Principal1 extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        TabLayout tl =(TabLayout) findViewById(R.id.tablayout);
-        tl.listener
+        ImageView i = (ImageView) findViewById(R.id.logoImg);
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Principal1.this, "HOLAAA", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
@@ -98,12 +104,6 @@ public class Principal1 extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu1,menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

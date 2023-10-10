@@ -4,22 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:tabIndicatorColor="@color/darkgreen">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/darkgreen"
-            android:foregroundTint="@color/green"
-            android:icon="@drawable/sinfondo2" />
-    </com.google.android.material.tabs.TabLayout>
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/sinfondo2" />
 </LinearLayout>
