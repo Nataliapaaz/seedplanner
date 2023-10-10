@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">seedplanner</string>
+    <string name="Bienvenido">Bienvenido</string>
+    <string name="inicia_sesion">Inicia sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="nombre">Nombre completo</string>
+    <string name="correo">E-mail</string>
+    <string name="registrarse">No tienes una cuenta? Registrate aquí</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="contraenia2">Vuelva a escribir la contraseña</string>
+    <string name="btningresar">Ingresar</string>
+    <string name="btnregistrar">Registrar</string>
+    <string name="recomendacion">Que puedo sembrar?</string>
+    <string name="inventario">Mi inventario de semillas</string>
+    <string name="agregar_a_inventario">Guardar semillas</string>
+    <string name="recordatorio">Recordatorio</string>
+    <string name="informacion_semilla">Informacion de semilla</string>
+    <string name="foot_square_garden">Foot square garden</string>
+    <string name="recomendaciones">Recomendaciones de siembra</string>
+
+    <string name="abrir_drawer">Drawer abierto</string>
+    <string name="cerrar_drawer">Drawer cerrado</string>
+
+    <string name="title_activity_olvidar_cuenta">Foot square garden</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
