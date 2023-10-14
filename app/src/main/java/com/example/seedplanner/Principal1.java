@@ -74,7 +74,29 @@ public class Principal1 extends AppCompatActivity {
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                System.out.println("HoLALA");
+                Toast.makeText(Principal1.this, "holaaa", Toast.LENGTH_SHORT).show();
+                int id = item.getItemId();
+                if (id==R.id.op1){
+                    Toast.makeText(getApplicationContext(), "Vas que puedo sembrar", Toast.LENGTH_SHORT).show();
+                }
+                else if (id==R.id.op2){
+                    Toast.makeText(getApplicationContext(), "Vas guardar semillas", Toast.LENGTH_SHORT).show();
+                }
+                else if (id==R.id.op3) {
+                    Toast.makeText(getApplicationContext(), "Vas a mi inventario de semillas", Toast.LENGTH_SHORT).show();
+                }
+                else if (id==R.id.op4) {
+                    Toast.makeText(getApplicationContext(), "Vas informacion de semillas", Toast.LENGTH_SHORT).show();
+                }
+                else if (id==R.id.op5) {
+                    Toast.makeText(getApplicationContext(), "Voy a foot square garden", Toast.LENGTH_SHORT).show();
+                }
+                else if (id==R.id.op6) {
+                    Toast.makeText(getApplicationContext(), "vas al recordatorio", Toast.LENGTH_SHORT).show();
+                    fragmento1 f = new fragmento1();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, f).commit();
+                }
                 return false;
             }
         });
@@ -94,11 +116,11 @@ public class Principal1 extends AppCompatActivity {
         tb.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(dl.isDrawerOpen(GravityCompat.START)){
-                    dl.closeDrawer(GravityCompat.START);
+                 if(dl.isDrawerOpen(GravityCompat.START)){
+                   dl.closeDrawer(GravityCompat.START);
                 }
                 else{
-                    dl.openDrawer((int)Gravity.START);
+                  dl.openDrawer((int)Gravity.START);
                 }
             }
         });
@@ -107,6 +129,7 @@ public class Principal1 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(this, "VVVVVVVV", Toast.LENGTH_SHORT).show();
         int id = item.getItemId();
         if (id==R.id.op1){
             Toast.makeText(this, "Vas que puedo sembrar", Toast.LENGTH_SHORT).show();

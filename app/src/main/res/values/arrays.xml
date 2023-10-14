@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="semillas">
+        <item>Tomate</item>
+        <item>Lechuga</item>
+        <item>Espinaca</item>
+        <item>Brocoli</item>
+        <item>Coliflor</item>
+        <item>Zapallo</item>
+        <item>Berenjena</item>
+        <item>Tomate Cherry</item>
+        <item>Zapallo Italiano</item>
+        <item>Acelga</item>
+        <item>Kale</item>
+        <item>Poroto</item>
+        <item>Arveja</item>
+        <item>Maiz dulce</item>
+        <item>Maiz morado</item>
+        <item>Apio</item>
+        <item>Betarraga</item>
+        <item>Papa</item>
+        <item>Pepino</item>
+        <item>Perejil</item>
+        <item>Pimenton</item>
+        <item>Sandia</item>
+    </string-array>
+</resources>

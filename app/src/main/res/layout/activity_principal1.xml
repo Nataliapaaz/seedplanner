@@ -7,12 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Principal1">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:menu="@menu/menu1" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -28,8 +22,8 @@
         <include
             android:id="@+id/include5"
             layout="@layout/bottombar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="291dp"
+            android:layout_height="270dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -45,5 +39,12 @@
 
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu1" />
 
 </androidx.drawerlayout.widget.DrawerLayout >
