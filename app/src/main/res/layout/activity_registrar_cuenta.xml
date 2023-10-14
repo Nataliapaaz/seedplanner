@@ -19,7 +19,7 @@
         android:text="@string/usuario" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -40,7 +40,7 @@
         android:text="@string/correo" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/etCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -61,7 +61,7 @@
         android:text="@string/contrasena" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -82,7 +82,7 @@
         android:text="@string/contraenia2" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/etPassword2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -99,6 +99,8 @@
         android:layout_marginStart="44dp"
         android:layout_marginEnd="44dp"
         android:insetTop="10dp"
+        android:onClick="registrar"
         android:paddingLeft="@dimen/fab_margin"
-        android:text="@string/btnregistrar" />
+        android:text="@string/btnregistrar"
+        android:textColor="@color/black" />
 </LinearLayout>
