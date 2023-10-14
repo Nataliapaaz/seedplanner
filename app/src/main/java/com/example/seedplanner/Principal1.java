@@ -8,7 +8,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -69,7 +71,7 @@ public class Principal1 extends AppCompatActivity {
             }
         });
 */
-
+        // MENU LATERAL
         NavigationView nav = (NavigationView) findViewById(R.id.nav);
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -96,6 +98,13 @@ public class Principal1 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "vas al recordatorio", Toast.LENGTH_SHORT).show();
                     fragmento1 f = new fragmento1();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, f).commit();
+                }
+                else if (id==R.id.op7){
+                    SharedPreferences datos = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    SharedPreferences.Editor editor = datos.edit();
+                    editor.remove("usuario");
+                    editor.apply();
+                    finish();
                 }
                 return false;
             }

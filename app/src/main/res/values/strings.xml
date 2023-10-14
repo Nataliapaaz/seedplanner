@@ -19,6 +19,8 @@
     <string name="recomendaciones">Recomendaciones de siembra</string>
     <string name="agregarainventario">Agregar semillas a mi inventario</string>
     <string name="semilla">Semilla</string>
+    <string name="recuerdame">Mantener sesión iniciada</string>
+    <string name="logout">Cerrar sesión</string>
 
     <string name="abrir_drawer">Drawer abierto</string>
     <string name="cerrar_drawer">Drawer cerrado</string>
