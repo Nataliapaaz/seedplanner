@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "302821719087",
+    "project_id": "fir-5b8a2",
+    "storage_bucket": "fir-5b8a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302821719087:android:4323efdbaf4f73a479dada",
+        "android_client_info": {
+          "package_name": "com.example.seedplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgFLb9cZgsgW4wnsFM4rvM6dWNQxVbcf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
