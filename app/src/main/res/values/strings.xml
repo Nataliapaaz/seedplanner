@@ -21,6 +21,9 @@
     <string name="semilla">Semilla</string>
     <string name="recuerdame">Mantener sesión iniciada</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="missemillas">Mis semillas</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
 
     <string name="abrir_drawer">Drawer abierto</string>
     <string name="cerrar_drawer">Drawer cerrado</string>

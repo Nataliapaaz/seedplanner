@@ -103,4 +103,12 @@
         android:paddingLeft="@dimen/fab_margin"
         android:text="@string/btnregistrar"
         android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="212dp"
+        android:layout_height="218dp"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/sinfondo2" />
+
 </LinearLayout>
