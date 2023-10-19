@@ -81,25 +81,26 @@ public class Principal1 extends AppCompatActivity {
                 Toast.makeText(Principal1.this, "holaaa", Toast.LENGTH_SHORT).show();
                 int id = item.getItemId();
                 if (id==R.id.op1){
-                    Intent i = new Intent(getApplicationContext(), Recomendaciones.class);
-                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "vas a recomendaciones", Toast.LENGTH_SHORT).show();
+                    RecomendacionSiembra r = new RecomendacionSiembra();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, r).commit();
                 }
                 else if (id==R.id.op2){
-                    Intent i = new Intent(getApplicationContext(), Agregarainventario.class);
-                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "vas a agregar semilla", Toast.LENGTH_SHORT).show();
+                    GuardarSemilla g = new GuardarSemilla();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, g).commit();
                 }
                 else if (id==R.id.op3) {
-                    Intent i = new Intent(getApplicationContext(), Agregarainventario.class);
-                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "Vas lalla", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.op4) {
-                    Toast.makeText(getApplicationContext(), "Vas informacion de semillas", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Vas lololo", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.op5) {
-                    Toast.makeText(getApplicationContext(), "Voy a foot square garden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Voy a lelel", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.op6) {
-                    Toast.makeText(getApplicationContext(), "vas al recordatorio", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "vas al lilili", Toast.LENGTH_SHORT).show();
                     fragmento1 f = new fragmento1();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, f).commit();
                 }
@@ -164,5 +165,9 @@ public class Principal1 extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void Hola(View v){
+
     }
 }

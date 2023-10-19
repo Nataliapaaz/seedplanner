@@ -39,11 +39,10 @@ public class Adaptador extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(contexto).inflate(R.layout.items_listview, null);
         TextView smNombre = (TextView) view.findViewById(R.id.smNombre);
-        TextView smEstacion = (TextView) view.findViewById(R.id.smEstacion);
         Semillas s = (Semillas) getItem(i);
         smNombre.setText(s.getNombre());
-        smEstacion.setText(s.getEstacion());
         return view;
+
 
     }
 }
