@@ -1,6 +1,8 @@
 package com.example.seedplanner;
 
-public class Semillas {
+import java.io.Serializable;
+
+public class Semillas implements Serializable {
 
     private String ruta;
     private String nombre;
@@ -35,4 +37,14 @@ public class Semillas {
     public void setEstacion(String estacion) {
         this.estacion = estacion;
     }
+
+    @Override
+    public String toString() {
+        return "Semillas{" +
+                "ruta='" + ruta + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", estacion='" + estacion + '\'' +
+                '}';
+    }
 }
+

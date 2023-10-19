@@ -59,4 +59,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
     }
+
+    public void registrar(View v){
+        Semillas s = new Semillas("", "Tomate", "primavera");
+        Intent i = new Intent(this, MisSemillas.class);
+        i.putExtra("Semilla", s);
+        startActivity(i);
+    }
 }

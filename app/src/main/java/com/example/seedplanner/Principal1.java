@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -76,17 +77,20 @@ public class Principal1 extends AppCompatActivity {
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                System.out.println("HoLALA");
+                System.out.println("Hola");
                 Toast.makeText(Principal1.this, "holaaa", Toast.LENGTH_SHORT).show();
                 int id = item.getItemId();
                 if (id==R.id.op1){
-                    Toast.makeText(getApplicationContext(), "Vas que puedo sembrar", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Recomendaciones.class);
+                    startActivity(i);
                 }
                 else if (id==R.id.op2){
-                    Toast.makeText(getApplicationContext(), "Vas guardar semillas", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Agregarainventario.class);
+                    startActivity(i);
                 }
                 else if (id==R.id.op3) {
-                    Toast.makeText(getApplicationContext(), "Vas a mi inventario de semillas", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Agregarainventario.class);
+                    startActivity(i);
                 }
                 else if (id==R.id.op4) {
                     Toast.makeText(getApplicationContext(), "Vas informacion de semillas", Toast.LENGTH_SHORT).show();

@@ -24,6 +24,9 @@
     <string name="missemillas">Mis semillas</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="clima">Clima</string>
+    <string name="mes">Mes</string>
+    <string name="verrecomendacion">Ver recomendaciones</string>
 
     <string name="abrir_drawer">Drawer abierto</string>
     <string name="cerrar_drawer">Drawer cerrado</string>
