@@ -91,10 +91,14 @@ public class Principal1 extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, g).commit();
                 }
                 else if (id==R.id.op3) {
-                    Toast.makeText(getApplicationContext(), "Vas lalla", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "vas a agregar semilla", Toast.LENGTH_SHORT).show();
+                    MisSemillas m = new MisSemillas();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, m).commit();
                 }
                 else if (id==R.id.op4) {
-                    Toast.makeText(getApplicationContext(), "Vas lololo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "vas a información semilla", Toast.LENGTH_SHORT).show();
+                    InfoSemilla info = new InfoSemilla();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, info).commit();
                 }
                 else if (id==R.id.op5) {
                     Toast.makeText(getApplicationContext(), "Voy a lelel", Toast.LENGTH_SHORT).show();

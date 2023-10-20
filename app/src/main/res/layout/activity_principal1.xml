@@ -22,8 +22,8 @@
         <include
             android:id="@+id/include5"
             layout="@layout/bottombar"
-            android:layout_width="291dp"
-            android:layout_height="270dp"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
