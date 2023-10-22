@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MisSemillas">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/missemillas" />
+        android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/lvSemillas"
-        android:layout_width="match_parent"
-        android:layout_height="498dp" />
+        <TextView
+            android:layout_width="407dp"
+            android:layout_height="76dp"
+            android:fontFamily="@font/allerta"
+            android:text="@string/missemillas"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038"
+            tools:layout_editor_absoluteX="2dp" />
+
+        <ListView
+            android:id="@+id/lvSemillas"
+            android:layout_width="322dp"
+            android:layout_height="508dp"
+            android:layout_marginBottom="164dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

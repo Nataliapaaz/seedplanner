@@ -101,7 +101,9 @@ public class Principal1 extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, info).commit();
                 }
                 else if (id==R.id.op5) {
-                    Toast.makeText(getApplicationContext(), "Voy a lelel", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "vas a Foot Square Garden", Toast.LENGTH_SHORT).show();
+                    FootSquare s = new FootSquare();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, s).commit();
                 }
                 else if (id==R.id.op6) {
                     Toast.makeText(getApplicationContext(), "vas al lilili", Toast.LENGTH_SHORT).show();

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "302821719087",
-    "project_id": "fir-5b8a2",
-    "storage_bucket": "fir-5b8a2.appspot.com"
+    "project_number": "610544097093",
+    "project_id": "proyectosemilla-8bf5f",
+    "storage_bucket": "proyectosemilla-8bf5f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:302821719087:android:4323efdbaf4f73a479dada",
+        "mobilesdk_app_id": "1:610544097093:android:fcebeb4cbc9f75ac3e502c",
         "android_client_info": {
           "package_name": "com.example.seedplanner"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAgFLb9cZgsgW4wnsFM4rvM6dWNQxVbcf8"
+          "current_key": "AIzaSyDg2NUiy41iB3DNOVSevDW9B8irUwHCjII"
         }
       ],
       "services": {
