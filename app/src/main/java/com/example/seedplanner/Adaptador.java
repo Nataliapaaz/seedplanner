@@ -7,15 +7,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
 public class Adaptador extends BaseAdapter {
     private Context contexto;
-    private ArrayList<Semillas> listItems;
+    private ArrayList<Inventario> listItems;
 
-    public Adaptador(Context contexto, ArrayList<Semillas> listItems) {
+    public Adaptador(Context contexto, ArrayList<Inventario> listItems) {
         this.contexto = contexto;
         this.listItems = listItems;
     }
@@ -39,10 +37,11 @@ public class Adaptador extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(contexto).inflate(R.layout.items_listview, null);
         TextView smNombre = (TextView) view.findViewById(R.id.smNombre);
-        Semillas s = (Semillas) getItem(i);
-        smNombre.setText(s.getNombre());
+        Inventario inventario = (Inventario) getItem(i);
+        smNombre.setText(inventario.getSemilla());
         return view;
-
-
     }
 }
+
+
+

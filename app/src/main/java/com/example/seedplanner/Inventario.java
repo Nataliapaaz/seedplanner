@@ -4,7 +4,7 @@ public class Inventario {
     private String semilla;
 
     public Inventario() {
-        // Constructor vacío requerido por Firestore
+        // Constructor vacío necesario para Firestore
     }
 
     public Inventario(String semilla) {
@@ -13,5 +13,9 @@ public class Inventario {
 
     public String getSemilla() {
         return semilla;
+    }
+
+    public void setSemilla(String semilla) {
+        this.semilla = semilla;
     }
 }

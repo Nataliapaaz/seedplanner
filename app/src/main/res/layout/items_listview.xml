@@ -13,8 +13,8 @@
 
         <TextView
             android:id="@+id/smNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="163dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="TextView" />
