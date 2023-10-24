@@ -8,99 +8,74 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/recordatorio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="162dp"
-            android:layout_height="44dp"
-            android:layout_marginBottom="172dp"
-            android:fontFamily="@font/allerta"
-            android:text="@string/cancelar"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="159dp"
-            android:layout_height="41dp"
-            android:layout_marginBottom="40dp"
-            android:fontFamily="@font/allerta"
-            android:text="@string/guardar"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/button5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginBottom="40dp"
             android:fontFamily="@font/allerta"
             android:text="@string/recordatorio"
             android:textAlignment="center"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.196" />
+            android:textSize="34sp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/diasdeanticipacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
             android:fontFamily="@font/allerta"
             android:text="Dias de anticipación"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="338dp" />
+            android:textSize="20sp" />
 
         <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
-            app:layout_constraintVertical_bias="0.085" />
+            android:id="@+id/dias"
+            android:layout_width="275dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="28dp" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/mes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
             android:fontFamily="@font/allerta"
             android:text="Mes"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="200dp" />
+            android:textSize="20sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Spinner
+            android:id="@+id/meses"
+            android:layout_width="275dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="28dp" />
+
+        <Button
+            android:id="@+id/btcancelar"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/allerta"
+            android:text="@string/cancelar"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btguardar"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/allerta"
+            android:text="@string/guardar"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
 
 </FrameLayout>
