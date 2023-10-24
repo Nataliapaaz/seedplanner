@@ -10,12 +10,13 @@
         android:id="@+id/textView15"
         android:layout_width="236dp"
         android:layout_height="97dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/allerta"
         android:text="@string/infosemilla"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

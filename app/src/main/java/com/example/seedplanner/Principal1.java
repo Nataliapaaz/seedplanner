@@ -32,17 +32,6 @@ public class Principal1 extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        ImageView i = (ImageView) findViewById(R.id.logoImg);
-        i.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Principal1.this, "HOLAAA", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
 
         /*
 

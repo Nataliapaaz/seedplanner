@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -49,24 +50,22 @@ public class MisSemillas extends Fragment {
     }
 
     public void cargarDatos() {
-        // Realiza una consulta a Firestore para obtener los datos de la colección "inventario"
+        // consulta a Firestore colección "inventario"
         db.collection("inventario")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            listado.clear(); // Limpia la lista antes de agregar nuevos datos
+                            listado.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                // Crea objetos Inventario a partir de los datos de Firestore
                                 Inventario inventario = document.toObject(Inventario.class);
                                 listado.add(inventario);
                             }
 
-                            // Notifica al adaptador que los datos han cambiado
-                            adaptador.notifyDataSetChanged(); // Utiliza la instancia adaptador
+                            adaptador.notifyDataSetChanged();
                         } else {
-                            // Maneja errores aquí
+                            Toast.makeText(getContext(), "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
