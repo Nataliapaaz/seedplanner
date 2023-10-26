@@ -23,6 +23,10 @@ public class RecomendacionSiembra extends Fragment {
     private ArrayAdapter<String> mesesAdapter;
     private ArrayList<String> mesesList = new ArrayList<>();
 
+    private Spinner climaSpinner;
+    private ArrayAdapter<String> climaAdapter;
+    private ArrayList<String> climaList = new ArrayList<>();
+
     public RecomendacionSiembra() {
         // Required empty public constructor
     }
@@ -50,6 +54,19 @@ public class RecomendacionSiembra extends Fragment {
         mesesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, mesesList);
         mesesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mesesSpinner.setAdapter(mesesAdapter);
+
+        climaList.clear();
+        climaList.add("Arido");
+        climaList.add("Húmedo");
+        climaList.add("Polar");
+        climaList.add("Tropical");
+
+        climaSpinner = view.findViewById(R.id.clima);
+        climaAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, climaList);
+        climaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        climaSpinner.setAdapter(climaAdapter);
+
+
 
         return view;
     }
