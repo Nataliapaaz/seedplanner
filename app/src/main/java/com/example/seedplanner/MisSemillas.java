@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +21,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MisSemillas extends Fragment {
     private ArrayList<Inventario> listado;
@@ -46,6 +51,17 @@ public class MisSemillas extends Fragment {
         listado = new ArrayList<>();
         adaptador = new Adaptador(getContext(), listado); // Inicializa adaptador
         l.setAdapter(adaptador);
+
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Crear un nuevo objeto Bundle para enviar datos al nuevo fragmento
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", listado.get(position).getNombre());
+                bundle.putString("descripcion", listado.get(position).getDescripcion());
+            }
+        });
+
         cargarDatos();
     }
 
@@ -57,13 +73,19 @@ public class MisSemillas extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            listado.clear();
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Inventario inventario = document.toObject(Inventario.class);
-                                listado.add(inventario);
-                            }
+                            // Llamar a runOnUiThread() para actualizar el ArrayList en el hilo principal
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    listado.clear();
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Inventario inventario = document.toObject(Inventario.class);
+                                        listado.add(inventario);
+                                    }
 
-                            adaptador.notifyDataSetChanged();
+                                    adaptador.notifyDataSetChanged();
+                                }
+                            });
                         } else {
                             Toast.makeText(getContext(), "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
                         }
