@@ -2,63 +2,73 @@ package com.example.seedplanner;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fragmento1#newInstance} factory method to
- * create an instance of this fragment.
- */
+
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+
+import java.util.ArrayList;
+
+
 public class fragmento1 extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private Spinner mesesSpinner;
+    private ArrayAdapter<String> mesesAdapter;
+    private ArrayList<String> mesesList = new ArrayList<>();
     public fragmento1() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment fragmento1.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static fragmento1 newInstance(String param1, String param2) {
-        fragmento1 fragment = new fragmento1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_fragmento1, container, false);
+        mesesList.clear();
+        mesesList.add("Enero");
+        mesesList.add("Feb");
+
+        mesesSpinner = view.findViewById(R.id.meses);
+        mesesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, mesesList);
+        mesesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mesesSpinner.setAdapter(mesesAdapter);
+
+        //cargarMesesDesdeFirestore();
+
+        return view;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
+    private void cargarMesesDesdeFirestore() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("meses")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        mesesList.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            String mes = document.getString("mes");
+                            if(mes!=null){
+                                mesesList.add(mes);
+
+                            }
+                            System.out.println("valor:" + mes);
+                        }
+                        mesesAdapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(getContext(), "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento1, container, false);
-    }
 }
