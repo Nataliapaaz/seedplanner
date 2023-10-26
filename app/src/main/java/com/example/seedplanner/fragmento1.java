@@ -35,7 +35,16 @@ public class fragmento1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragmento1, container, false);
         mesesList.clear();
         mesesList.add("Enero");
-        mesesList.add("Feb");
+        mesesList.add("Febrero");
+        mesesList.add("Marzo");
+        mesesList.add("Abril");
+        mesesList.add("Junio");
+        mesesList.add("Julio");
+        mesesList.add("Agosto");
+        mesesList.add("Septiembre");
+        mesesList.add("Octubre");
+        mesesList.add("Noviembre");
+        mesesList.add("Diciembre");
 
         mesesSpinner = view.findViewById(R.id.meses);
         mesesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, mesesList);
