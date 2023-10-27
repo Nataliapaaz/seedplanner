@@ -1,5 +1,6 @@
 package com.example.seedplanner;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ public class GuardarSemilla extends Fragment {
         View view = inflater.inflate(R.layout.fragment_guardar_semilla, container, false);
         spinner = view.findViewById(R.id.spinner5);
         Button guardarButton = view.findViewById(R.id.button6);
+        final Context context = getContext();
 
         // Firestore _id de los documentos
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -55,17 +57,15 @@ public class GuardarSemilla extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            final ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 String id = document.getId();
                                 adapter.add(id);
                             }
-
-                            // adaptador
                             spinner.setAdapter(adapter);
                         } else {
-                            Toast.makeText(getContext(), "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

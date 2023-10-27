@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MisSemillas extends Fragment {
@@ -49,7 +50,7 @@ public class MisSemillas extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ListView l = view.findViewById(R.id.lvSemillas);
         listado = new ArrayList<>();
-        adaptador = new Adaptador(getContext(), listado); // Inicializa adaptador
+        adaptador = new Adaptador(getContext(), listado);
         l.setAdapter(adaptador);
 
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -59,11 +60,19 @@ public class MisSemillas extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", listado.get(position).getNombre());
                 bundle.putString("descripcion", listado.get(position).getDescripcion());
+                InfoSemilla r = new InfoSemilla();
+                r.setArguments(bundle);
+
+                // Reemplazar el fragmento actual en el contenedor con el fragmento InfoSemilla
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, r).commit();
             }
         });
 
         cargarDatos();
     }
+
+
+
 
     public void cargarDatos() {
         // consulta a Firestore colección "inventario"

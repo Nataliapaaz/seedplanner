@@ -9,14 +9,58 @@
     <TextView
         android:id="@+id/textView15"
         android:layout_width="236dp"
-        android:layout_height="97dp"
+        android:layout_height="0dp"
         android:layout_marginTop="80dp"
+        android:layout_marginBottom="57dp"
         android:fontFamily="@font/allerta"
         android:text="@string/infosemilla"
         android:textAlignment="center"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="97dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sol"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agual"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estaciòn"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Germinaciòn"
+            android:textSize="24sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
