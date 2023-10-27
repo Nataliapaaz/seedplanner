@@ -74,18 +74,20 @@ public class MisSemillas extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             // Llamar a runOnUiThread() para actualizar el ArrayList en el hilo principal
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    listado.clear();
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        Inventario inventario = document.toObject(Inventario.class);
-                                        listado.add(inventario);
-                                    }
+                            if (getActivity() != null) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        listado.clear();
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                            Inventario inventario = document.toObject(Inventario.class);
+                                            listado.add(inventario);
+                                        }
 
-                                    adaptador.notifyDataSetChanged();
-                                }
-                            });
+                                        adaptador.notifyDataSetChanged();
+                                    }
+                                });
+                            }
                         } else {
                             Toast.makeText(getContext(), "Error al cargar las opciones", Toast.LENGTH_SHORT).show();
                         }
