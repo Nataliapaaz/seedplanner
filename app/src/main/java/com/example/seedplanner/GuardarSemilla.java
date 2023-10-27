@@ -13,7 +13,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -77,21 +79,41 @@ public class GuardarSemilla extends Fragment {
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                // colección "inventario"
-                db.collection("inventario")
-                        .add(new Inventario(selectedOption))
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(getContext(), "Semilla guardada en inventario", Toast.LENGTH_SHORT).show();
+                // Colección "inventario"
+                CollectionReference inventarioRef = db.collection("inventario");
+
+                // Verificar si ya existe un documento con el mismo nombre
+                Query query = inventarioRef.whereEqualTo("nombre", selectedOption);
+
+                query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult().isEmpty()) {
+                                // No hay documentos con el mismo nombre, por lo que podemos agregar uno nuevo
+                                Inventario inventario = new Inventario(selectedOption);
+                                inventarioRef.add(inventario)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Toast.makeText(getContext(), "Semilla guardada en inventario", Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(getContext(), "Error al guardar la opción", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            } else {
+                                // Ya existe un documento con el mismo nombre
+                                Toast.makeText(getContext(), "La semilla ya existe en el inventario", Toast.LENGTH_SHORT).show();
                             }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getContext(), "Error al guardar la opción", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        } else {
+                            Toast.makeText(getContext(), "Error al verificar la opción", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 
