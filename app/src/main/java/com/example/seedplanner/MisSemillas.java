@@ -50,20 +50,19 @@ public class MisSemillas extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ListView l = view.findViewById(R.id.lvSemillas);
         listado = new ArrayList<>();
-        adaptador = new Adaptador(getContext(), listado);
+        adaptador = new Adaptador(getContext(), listado, db);
         l.setAdapter(adaptador);
 
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Crear un nuevo objeto Bundle para enviar datos al nuevo fragmento
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", listado.get(position).getNombre());
                 bundle.putString("descripcion", listado.get(position).getDescripcion());
                 InfoSemilla r = new InfoSemilla();
                 r.setArguments(bundle);
 
-                // Reemplazar el fragmento actual en el contenedor con el fragmento InfoSemilla
+                // Reemplazar el fragmento actual
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, r).commit();
             }
         });
@@ -82,7 +81,7 @@ public class MisSemillas extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            // Llamar a runOnUiThread() para actualizar el ArrayList en el hilo principal
+                            // actualizar el ArrayList
                             if (getActivity() != null) {
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override

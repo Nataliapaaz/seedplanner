@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class InfoSemilla extends Fragment {
     private FirebaseFirestore db;
 
-    // Agrega una variable para almacenar el nombre de la semilla seleccionada
+    // almacenar el nombre de la semilla
     private String nombreSemillaSeleccionada;
 
     @Override
@@ -33,15 +33,14 @@ public class InfoSemilla extends Fragment {
         // Inicializa Firebase Firestore
         db = FirebaseFirestore.getInstance();
 
-        // Obtiene el nombre de la semilla seleccionada del Bundle
         Bundle bundle = getArguments();
         if (bundle != null) {
             nombreSemillaSeleccionada = bundle.getString("nombre");
         }
 
-        if (nombreSemillaSeleccionada != null && nombreSemillaSeleccionada.equals("berenjena")) {
+        if (nombreSemillaSeleccionada != null && nombreSemillaSeleccionada.equals("coliflor")) {
             db.collection("lista")
-                    .document("berenjena")  // Documento específico
+                    .document("coliflor")  // Documento específico
                     .get()
                     .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
