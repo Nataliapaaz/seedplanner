@@ -26,6 +26,11 @@ public class fragmento1 extends Fragment {
     private Spinner mesesSpinner;
     private ArrayAdapter<String> mesesAdapter;
     private ArrayList<String> mesesList = new ArrayList<>();
+
+    private Spinner diasSpinner;
+
+    private ArrayAdapter<String> diasAdapter;
+    private ArrayList<String> diasList = new ArrayList<>();
     public fragmento1() {
         // Required empty public constructor
     }
@@ -50,6 +55,17 @@ public class fragmento1 extends Fragment {
         mesesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, mesesList);
         mesesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mesesSpinner.setAdapter(mesesAdapter);
+
+        diasList.clear();
+        diasList.add("1");
+        diasList.add("2");
+        diasList.add("3");
+        diasList.add("4");
+
+        diasSpinner = view.findViewById(R.id.dias);
+        diasAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, diasList);
+        diasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        diasSpinner.setAdapter(diasAdapter);
 
         //cargarMesesDesdeFirestore();
 

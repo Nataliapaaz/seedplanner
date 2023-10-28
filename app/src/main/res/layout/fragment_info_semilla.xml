@@ -39,28 +39,32 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sol"
+            android:fontFamily="@font/allerta"
+            android:text="Sol:"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Agual"
+            android:fontFamily="@font/allerta"
+            android:text="Agua:"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estaciòn"
+            android:fontFamily="@font/allerta"
+            android:text="Estación:"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Germinaciòn"
+            android:fontFamily="@font/allerta"
+            android:text="Germinación:"
             android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

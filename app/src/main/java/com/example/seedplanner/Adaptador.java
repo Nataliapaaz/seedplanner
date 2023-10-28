@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class Adaptador extends BaseAdapter {
     private Context contexto;
     private ArrayList<Inventario> listItems;
-    private FirebaseFirestore db; // Agrega una instancia de FirebaseFirestore
+    private FirebaseFirestore db; // Instancia de FirebaseFirestore
 
     public Adaptador(Context contexto, ArrayList<Inventario> listItems, FirebaseFirestore db) {
         this.contexto = contexto;
@@ -62,7 +62,7 @@ public class Adaptador extends BaseAdapter {
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Realiza la eliminación del documento correspondiente en Firestore
+                // Eliminar
                 String nombreDocumento = inventario.getSemilla();
                 eliminarDocumento(nombreDocumento);
             }
@@ -72,10 +72,10 @@ public class Adaptador extends BaseAdapter {
     }
 
     public void eliminarDocumento(String nombreSemilla) {
-        // Referencia a la colección "inventario"
+        // Referencia a la colección
         CollectionReference inventarioRef = db.collection("inventario");
 
-        // Consulta para encontrar documentos que coincidan con el nombre de semilla
+        // Busqueda
         Query query = inventarioRef.whereEqualTo("semilla", nombreSemilla);
 
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -83,7 +83,7 @@ public class Adaptador extends BaseAdapter {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
-                        // Obten el ID del documento y elimínalo
+                        // Obtener ID y eliminar
                         String documentId = document.getId();
                         inventarioRef.document(documentId).delete();
                     }
@@ -95,7 +95,7 @@ public class Adaptador extends BaseAdapter {
     }
 
     private void cargarDatos() {
-        // consulta a Firestore colección "inventario"
+        // consulta a Firestore
         db.collection("inventario")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

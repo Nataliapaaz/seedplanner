@@ -12,7 +12,6 @@ public class Inventario {
         descripciones = new HashMap<>();
         descripciones.put("tomate", "Semilla de tomate, conocida por su gran adaptabilidad.");
         descripciones.put("papa", "Semilla de papa, ideales para cultivos en regiones áridas.");
-        // ... más semillas y descripciones
     }
 
     public Inventario() {

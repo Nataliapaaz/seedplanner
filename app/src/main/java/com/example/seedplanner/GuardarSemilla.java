@@ -51,7 +51,7 @@ public class GuardarSemilla extends Fragment {
         Button guardarButton = view.findViewById(R.id.button6);
         final Context context = getContext();
 
-        // Firestore _id de los documentos
+        // Firestore ID de los documentos
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("lista")
                 .get()
