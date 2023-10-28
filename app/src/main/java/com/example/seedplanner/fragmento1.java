@@ -1,5 +1,9 @@
 package com.example.seedplanner;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +25,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class fragmento1 extends Fragment {
@@ -31,6 +37,10 @@ public class fragmento1 extends Fragment {
 
     private ArrayAdapter<String> diasAdapter;
     private ArrayList<String> diasList = new ArrayList<>();
+
+    private EditText diasAnticipacionEditText;
+    private int diaObjetivo;
+
     public fragmento1() {
         // Required empty public constructor
     }
@@ -38,6 +48,9 @@ public class fragmento1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragmento1, container, false);
+
+        diaObjetivo = 6;
+
         mesesList.clear();
         mesesList.add("Enero");
         mesesList.add("Febrero");
@@ -95,5 +108,24 @@ public class fragmento1 extends Fragment {
                     }
                 });
     }
+
+    public void programarRecordatorio() {
+        int mesSeleccionado = mesesSpinner.getSelectedItemPosition();
+        String diasAnticipacionStr = diasSpinner.getSelectedItem().toString(); // seleccionado del Spinner
+        int diasAnticipacion = Integer.parseInt(diasAnticipacionStr);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, Calendar.getInstance().get(Calendar.YEAR)); // Año actual
+        calendar.set(Calendar.MONTH, mesSeleccionado); // Mes seleccionado
+        calendar.set(Calendar.DAY_OF_MONTH, diaObjetivo); // Día objetivo
+        calendar.add(Calendar.DAY_OF_MONTH, -diasAnticipacion);
+
+        // Configura la notificación
+        AlarmManager alarmManager = (AlarmManager) requireContext().getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(requireContext(), NotificacionReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, 0);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+
 
 }

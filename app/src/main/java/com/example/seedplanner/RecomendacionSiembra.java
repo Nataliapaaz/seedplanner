@@ -12,11 +12,7 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RecomendacionSiembra#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class RecomendacionSiembra extends Fragment {
 
     private Spinner mesesSpinner;
@@ -70,6 +66,7 @@ public class RecomendacionSiembra extends Fragment {
 
         return view;
     }
+
 
 
 }
