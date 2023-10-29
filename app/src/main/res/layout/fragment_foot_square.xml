@@ -24,15 +24,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Spinner
+            android:id="@+id/opciones"
+            android:layout_width="312dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="32dp"
+            android:entries="@array/opciones"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="261dp"
-            android:layout_height="573dp"
-            android:layout_marginTop="176dp"
-            android:src="@drawable/a6b0e13b61154e7ed40e808b795e7c03"
+            android:layout_width="253dp"
+            android:layout_height="440dp"
+            android:layout_marginTop="336dp"
+            android:src="@drawable/verduras"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ver"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opciones" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
