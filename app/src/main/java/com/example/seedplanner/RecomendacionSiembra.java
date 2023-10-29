@@ -3,11 +3,13 @@ package com.example.seedplanner;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -62,11 +64,30 @@ public class RecomendacionSiembra extends Fragment {
         climaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         climaSpinner.setAdapter(climaAdapter);
 
+        Button button3 = view.findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //seleccion del Spinner
+                String selectedMes = mesesSpinner.getSelectedItem().toString();
+                String selectedClima = climaSpinner.getSelectedItem().toString();
+                // Cargar InfoRecomendacion
+                InfoRecomendacion infoFragment = new InfoRecomendacion();
+                Bundle args = new Bundle();
+                args.putString("selectedMes", selectedMes);
+                args.putString("selectedClima", selectedClima);
+                infoFragment.setArguments(args);
+
+                FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.contenedor, infoFragment);
+                transaction.addToBackStack(null); // Opcional: para agregar la transacción a la pila de retroceso
+                transaction.commit();
+            }
+        });
 
 
         return view;
     }
-
 
 
 }

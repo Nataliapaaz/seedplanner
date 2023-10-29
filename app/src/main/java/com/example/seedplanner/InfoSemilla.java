@@ -22,7 +22,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class InfoSemilla extends Fragment {
     private FirebaseFirestore db;
 
-    // almacenar el nombre de la semilla
     private String nombreSemillaSeleccionada;
 
     @Override
@@ -128,7 +127,7 @@ public class InfoSemilla extends Fragment {
                             }
                         });
             } else {
-                // Error si la semilla seleccionada no coincide con ninguna de las opciones
+                // Error si la semilla seleccionada no coincide
                 Toast.makeText(getContext(), "La semilla seleccionada no coincide con ninguna semilla conocida", Toast.LENGTH_SHORT).show();
             }
         }

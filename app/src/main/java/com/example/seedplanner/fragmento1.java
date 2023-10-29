@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -81,6 +82,15 @@ public class fragmento1 extends Fragment {
         diasSpinner.setAdapter(diasAdapter);
 
         //cargarMesesDesdeFirestore();
+
+        Button btguardar = view.findViewById(R.id.btguardar);
+        btguardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Se ha Guardado!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         return view;
     }
