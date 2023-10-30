@@ -67,35 +67,28 @@ public class Principal1 extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 System.out.println("Hola");
-                Toast.makeText(Principal1.this, "holaaa", Toast.LENGTH_SHORT).show();
                 int id = item.getItemId();
                 if (id==R.id.op1){
-                    Toast.makeText(getApplicationContext(), "vas a recomendaciones", Toast.LENGTH_SHORT).show();
                     RecomendacionSiembra r = new RecomendacionSiembra();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, r).commit();
                 }
                 else if (id==R.id.op2){
-                    Toast.makeText(getApplicationContext(), "vas a agregar semilla", Toast.LENGTH_SHORT).show();
                     GuardarSemilla g = new GuardarSemilla();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, g).commit();
                 }
                 else if (id==R.id.op3) {
-                    Toast.makeText(getApplicationContext(), "vas a agregar semilla", Toast.LENGTH_SHORT).show();
                     MisSemillas m = new MisSemillas();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, m).commit();
                 }
                 else if (id==R.id.op4) {
-                    Toast.makeText(getApplicationContext(), "vas a información semilla", Toast.LENGTH_SHORT).show();
                     InfoSemilla info = new InfoSemilla();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, info).commit();
                 }
                 else if (id==R.id.op5) {
-                    Toast.makeText(getApplicationContext(), "vas a Foot Square Garden", Toast.LENGTH_SHORT).show();
                     FootSquare s = new FootSquare();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, s).commit();
                 }
                 else if (id==R.id.op6) {
-                    Toast.makeText(getApplicationContext(), "vas al lilili", Toast.LENGTH_SHORT).show();
                     fragmento1 f = new fragmento1();
                     getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, f).commit();
                 }
