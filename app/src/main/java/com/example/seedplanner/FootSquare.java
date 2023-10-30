@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -26,17 +27,23 @@ public class FootSquare extends Fragment {
         imageView = view.findViewById(R.id.imageView4);
         verButton = view.findViewById(R.id.ver);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(), R.array.opciones, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        opciones.setAdapter(adapter);
+
         opciones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // Opción del Spinner
                 String opcionSeleccionada = opciones.getSelectedItem().toString();
 
-                // Cambiar la imagen cuando se selecciona una opción
-                if (opcionSeleccionada.equals("Verdura")) {
+                // Cambiar la imagen
+                if (opcionSeleccionada.equals("Verduras")) {
                     imageView.setImageResource(R.drawable.verduras);
                 } else if (opcionSeleccionada.equals("Hierbas")) {
                     imageView.setImageResource(R.drawable.hierbas);
+                } else {
+                    imageView.setImageResource(0);
                 }
             }
 
