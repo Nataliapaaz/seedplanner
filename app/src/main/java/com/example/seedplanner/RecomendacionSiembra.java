@@ -77,10 +77,10 @@ public class RecomendacionSiembra extends Fragment {
                 args.putString("selectedMes", selectedMes);
                 args.putString("selectedClima", selectedClima);
                 infoFragment.setArguments(args);
-
+                //Cambiar el fragment
                 FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedor, infoFragment);
-                transaction.addToBackStack(null); // Opcional: para agregar la transacción a la pila de retroceso
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });

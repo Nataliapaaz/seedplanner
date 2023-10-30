@@ -31,6 +31,8 @@ public class InfoRecomendacion extends Fragment {
             String selectedMes = args.getString("selectedMes");
             String selectedClima = args.getString("selectedClima");
 
+            //conexion con la base de datos Firebase
+
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             db.collection("recomendaciones")
                     .whereEqualTo("mes", selectedMes)

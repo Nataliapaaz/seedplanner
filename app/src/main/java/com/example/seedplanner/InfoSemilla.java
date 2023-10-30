@@ -29,7 +29,7 @@ public class InfoSemilla extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_info_semilla, container, false);
 
-        // Inicializa Firebase Firestore
+        // Inicializa Firebase
         db = FirebaseFirestore.getInstance();
 
         Bundle bundle = getArguments();
@@ -41,7 +41,7 @@ public class InfoSemilla extends Fragment {
             if (nombreSemillaSeleccionada.equals("berenjena")) {
                 // Código para la berenjena
                 db.collection("lista")
-                        .document("berenjena")  // Documento específico
+                        .document("berenjena")  // Documento Berenjena
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -70,7 +70,7 @@ public class InfoSemilla extends Fragment {
                         });
             } else if (nombreSemillaSeleccionada.equals("coliflor")) {
                 db.collection("lista")
-                        .document("coliflor")  // Documento específico
+                        .document("coliflor")  // Documento Coliflor
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -99,7 +99,123 @@ public class InfoSemilla extends Fragment {
                         });
             } else if (nombreSemillaSeleccionada.equals("brocoli")) {
                 db.collection("lista")
-                        .document("brocoli")  // Documento específico
+                        .document("brocoli")  // Documento Brocoli
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                if (documentSnapshot.exists()) {
+                                    // Acceder a campos
+                                    String sol = documentSnapshot.getString("sol");
+                                    String agua = documentSnapshot.getString("agua");
+                                    String estacion = documentSnapshot.getString("estacion");
+                                    String germinacion = documentSnapshot.getString("germinacion");
+
+                                    // Actualiza TextViews
+                                    TextView textViewSol = view.findViewById(R.id.textView11);
+                                    textViewSol.setText("Sol: " + sol);
+
+                                    TextView textViewAgua = view.findViewById(R.id.textView12);
+                                    textViewAgua.setText("Agua: " + agua);
+
+                                    TextView textViewEstacion = view.findViewById(R.id.textView17);
+                                    textViewEstacion.setText("Estación: " + estacion);
+
+                                    TextView textViewGerminacion = view.findViewById(R.id.textView18);
+                                    textViewGerminacion.setText("Germinación: " + germinacion);
+                                }
+                            }
+                        });
+            } else if (nombreSemillaSeleccionada.equals("lechuga")) {
+                db.collection("lista")
+                        .document("lechuga")  // Documento Lechuga
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                if (documentSnapshot.exists()) {
+                                    // Acceder a campos
+                                    String sol = documentSnapshot.getString("sol");
+                                    String agua = documentSnapshot.getString("agua");
+                                    String estacion = documentSnapshot.getString("estacion");
+                                    String germinacion = documentSnapshot.getString("germinacion");
+
+                                    // Actualiza TextViews
+                                    TextView textViewSol = view.findViewById(R.id.textView11);
+                                    textViewSol.setText("Sol: " + sol);
+
+                                    TextView textViewAgua = view.findViewById(R.id.textView12);
+                                    textViewAgua.setText("Agua: " + agua);
+
+                                    TextView textViewEstacion = view.findViewById(R.id.textView17);
+                                    textViewEstacion.setText("Estación: " + estacion);
+
+                                    TextView textViewGerminacion = view.findViewById(R.id.textView18);
+                                    textViewGerminacion.setText("Germinación: " + germinacion);
+                                }
+                            }
+                        });
+            } else if (nombreSemillaSeleccionada.equals("tomate")) {
+                db.collection("lista")
+                        .document("tomate")  // Documento Tomate
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                if (documentSnapshot.exists()) {
+                                    // Acceder a campos
+                                    String sol = documentSnapshot.getString("sol");
+                                    String agua = documentSnapshot.getString("agua");
+                                    String estacion = documentSnapshot.getString("estacion");
+                                    String germinacion = documentSnapshot.getString("germinacion");
+
+                                    // Actualiza TextViews
+                                    TextView textViewSol = view.findViewById(R.id.textView11);
+                                    textViewSol.setText("Sol: " + sol);
+
+                                    TextView textViewAgua = view.findViewById(R.id.textView12);
+                                    textViewAgua.setText("Agua: " + agua);
+
+                                    TextView textViewEstacion = view.findViewById(R.id.textView17);
+                                    textViewEstacion.setText("Estación: " + estacion);
+
+                                    TextView textViewGerminacion = view.findViewById(R.id.textView18);
+                                    textViewGerminacion.setText("Germinación: " + germinacion);
+                                }
+                            }
+                        });
+            } else if (nombreSemillaSeleccionada.equals("pepino")) {
+                db.collection("lista")
+                        .document("pepino")  // Documento Pepino
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                if (documentSnapshot.exists()) {
+                                    // Acceder a campos
+                                    String sol = documentSnapshot.getString("sol");
+                                    String agua = documentSnapshot.getString("agua");
+                                    String estacion = documentSnapshot.getString("estacion");
+                                    String germinacion = documentSnapshot.getString("germinacion");
+
+                                    // Actualiza TextViews
+                                    TextView textViewSol = view.findViewById(R.id.textView11);
+                                    textViewSol.setText("Sol: " + sol);
+
+                                    TextView textViewAgua = view.findViewById(R.id.textView12);
+                                    textViewAgua.setText("Agua: " + agua);
+
+                                    TextView textViewEstacion = view.findViewById(R.id.textView17);
+                                    textViewEstacion.setText("Estación: " + estacion);
+
+                                    TextView textViewGerminacion = view.findViewById(R.id.textView18);
+                                    textViewGerminacion.setText("Germinación: " + germinacion);
+                                }
+                            }
+                        });
+            } else if (nombreSemillaSeleccionada.equals("zapallo")) {
+                db.collection("lista")
+                        .document("zapallo")  // Documento Zapallo
                         .get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -127,7 +243,7 @@ public class InfoSemilla extends Fragment {
                             }
                         });
             } else {
-                // Error si la semilla seleccionada no coincide
+                // Error si la semilla seleccionada no se encuentra
                 Toast.makeText(getContext(), "La semilla seleccionada no coincide con ninguna semilla conocida", Toast.LENGTH_SHORT).show();
             }
         }
